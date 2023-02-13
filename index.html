@@ -17,7 +17,7 @@
             <div class="left-side"></div>
             <div class="right-side"></div>
           </div>
-          
+
           <div class="heartTwo">
             <div class="left-side"></div>
             <div class="right-side"></div>
@@ -54,10 +54,12 @@
           >
             Yes</button
           >&nbsp;
-          <button id="btn_no">No</button>
+          <button id="btn_no" onclick="playPause()" data-modal-target="#modal">
+            No
+          </button>
         </div>
       </div>
-      <button class="click_me">-- Click the text! --</button>
+      <button onclick="pause()" class="click_me">-- Click the text! --</button>
     </div>
     <!-- modal -->
     <!-- <button data-modal-target="#modal">Open Modal</button> -->
@@ -88,11 +90,16 @@
         if (myVideo.paused) myVideo.play();
         // else myVideo.pause();
       }
+      function pause() {
+        if (myVideo.play) myVideo.pause();
+      }
       function no() {
         var i = Math.floor(Math.random() * 400) + 1;
-        var j = Math.floor(Math.random() * 200) + 2;
-        yes.style.left = i + "px";
+        var j = Math.floor(Math.random() * 400) + 1;
+
+        yes.style.bottom = i + "px";
         yes.style.top = j + "px";
+
         yes.style.position = "fixed";
       }
       var yes = document.getElementById("btn_no");
