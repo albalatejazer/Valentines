@@ -44,15 +44,46 @@
         </div>
 
         <div id="btn_container">
-          <button id="btn_yes" class="btn-yes">Yes</button>&nbsp;
+          <button
+            onclick="playPause()"
+            data-modal-target="#modal"
+            id="btn_yes"
+            class="btn-yes"
+          >
+            Yes</button
+          >&nbsp;
           <button id="btn_no">No</button>
         </div>
       </div>
       <button class="click_me">-- Click the text! --</button>
     </div>
+    <!-- modal -->
+    <!-- <button data-modal-target="#modal">Open Modal</button> -->
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">I want to dedicate this song For you!</div>
+      </div>
+      <div class="modal-body">
+        <video
+          id="video1"
+          src="/video/Ben&Ben - Paninindigan Kita - Official Music Video.mkv"
+          width="800"
+          height="auto"
+        ></video>
+      </div>
+    </div>
+    <div id="overlay"></div>
+
     <script src="show--hide.js"></script>
+    <script defer src="modalScript.js"></script>
     <!-- <script src="buttonRandom.js">  </script> -->
     <script>
+      var myVideo = document.getElementById("video1");
+
+      function playPause() {
+        if (myVideo.paused) myVideo.play();
+        // else myVideo.pause();
+      }
       function no() {
         var i = Math.floor(Math.random() * 400) + 1;
         var j = Math.floor(Math.random() * 200) + 2;
