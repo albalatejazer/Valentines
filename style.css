@@ -334,7 +334,7 @@ button {
   display: inline-block;
   font-size: 15px;
   margin: 3px 1px;
-  transition-duration: 0.4s;
+  transition-duration: 0.05s;
   cursor: pointer;
 }
 /* button {
@@ -455,3 +455,4 @@ button {
 #video1 {
   border-radius: 10px;
 }
+
